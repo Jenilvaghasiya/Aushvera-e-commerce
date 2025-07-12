@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Ayushvera International</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #071b42;
+      color: #b8860b;
+      padding-top: 90px;
+    }
+
+    /* Header styles */
+    header {
+      width: 100%;
+      background: #071b42;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 40px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+
+    header.scrolled {
+      background: #fff;
+      color: #071b42;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: #b8860b;
+      font-weight: bold;
+    }
+
+    header .logo img {
+      height: 62px;
+    }
+
+    nav a {
+      margin: 0 30px;
+      text-decoration: none;
+      color: black;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    header nav a {
+      color: inherit;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    header.scrolled nav a {
+      color: #071b42;
+    }
+
+    .icons .nav-btn {
+      background: none;
+      border: none;
+      color: inherit;
+      font-size: 20px;
+      margin-left: 12px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    header.scrolled .icons .nav-btn {
+      color: #071b42;
+    }
+
+    /* Hero section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px;
+      height: 560px;
+    }
+
+    .text-content {
+      max-width: 55%;
+    }
+
+    .text-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #f9d27c;
+      margin-bottom: 20px;
+    }
+
+    .text-content h1 span {
+      color: #d8a32e;
+    }
+
+    .text-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #f3f4f6;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn-primary {
+      background-color: #d4af37;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn-secondary {
+      background-color: white;
+      color: #d4af37;
+      border: none;
+      padding: 12px 24px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .image-content img {
+      width: 280px;
+      height: auto;
+      margin-right: 100px;
+    }
+
+    .logo img {
+      height: 90px;
+      width: auto;
+    }
+
+    /* Featured Products */
+    .featured-products {
+      padding: 40px 80px;
+      background-color: #f8f8f8;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .featured-products h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      color: #0f0f0f;
+      margin-bottom: 30px;
+    }
+
+    .featured-products h2 span {
+      color: #d8a32e;
+      font-weight: bold;
+    }
+
+    .product-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+      overflow: hidden;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #eee;
+    }
+
+    .product-details {
+      padding: 15px;
+      text-align: left;
+    }
+
+    .product-details h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .product-details .price {
+      color: #d8a32e;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .product-details .desc {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .actions a {
+      font-size: 13px;
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .actions button {
+      border: 1px solid #d8a32e;
+      background: transparent;
+      color: #000;
+      padding: 5px 12px;
+      font-size: 13px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .actions button:hover {
+      background-color: #d8a32e;
+      color: #fff;
+    }
+
+    /* About Product */
+    .about-product {
+      background: #071b42;
+      padding: 50px 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .about-product-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 1 1 350px;
+      min-width: 300px;
+    }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #b8860b;
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      font-size: 18px;
+      color: #d8a32e;
+      line-height: 1.7;
+    }
+
+    .about-text .highlight {
+      color: #d8a32e;
+      font-weight: bold;
+    }
+
+    .about-image {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-image img {
+      width: 450px;
+      max-width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(216, 163, 46, 0.10);
+    }
+
+    @media (max-width: 900px) {
+      .about-product-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+      }
+      .about-image {
+        justify-content: center;
+      }
+    }
+
+    /* About Us */
+    .about-us {
+      background: #ffffff;
+      padding: 50px 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .about-us-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .about-us-text {
+      flex: 1 1 350px;
+      min-width: 300px;
+    }
+
+    .about-us-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #b8860b;
+      margin-bottom: 18px;
+    }
+
+    .about-us-text p {
+      font-size: 18px;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    .about-us-image {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-us-image img {
+      width: 350px;
+      max-width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(216, 163, 46, 0.10);
+    }
+
+    @media (max-width: 900px) {
+      .about-us-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+      }
+      .about-us-image {
+        justify-content: center;
+      }
+    }
+
+    /* Our Team */
+    .our-team {
+      background: #ffffff;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .our-team-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #b8860b;
+      margin-bottom: 40px;
+    }
+
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .team-member {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(216, 163, 46, 0.08);
+      padding: 24px 18px;
+      width: 220px;
+      text-align: center;
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 3px solid #d8a32e;
+    }
+
+    .team-member h3 {
+      margin: 10px 0 4px 0;
+      font-size: 20px;
+      color: #071b42;
+    }
+
+    .team-member p {
+      color: #b8860b;
+      font-size: 15px;
+    }
+
+    @media (max-width: 900px) {
+      .team-grid {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+
+    /* Contact Us */
+    .contact-us {
+      background: #071b42;
+      color: #fff;
+      padding: 50px 0;
+      text-align: center;
+    }
+
+    .contact-us-content {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact-us h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #d8a32e;
+      margin-bottom: 30px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border: 2px solid #d8a32e;
+    }
+
+    .contact-form button {
+      background: #d8a32e;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .contact-form button:hover {
+      background: #b8860b;
+    }
+
+    .contact-details p {
+      margin: 6px 0;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #fff;
+      color: #222;
+      text-align: center;
+      padding: 18px 0;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      border-top: 1px solid #eee;
+      margin-top: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        padding: 30px 10px;
+        height: auto;
+        text-align: center;
+      }
+      .image-content img {
+        margin: 0;
+        width: 200px;
+      }
+      .featured-products {
+        padding: 20px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="scrolled">
+    <div class="logo">
+      <img src="images/logo.png" alt="Ayushvera Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="team.html">Our Team</a>
+    </nav>
+    <div class="icons">
+      <button class="nav-btn"><span class="fa fa-shopping-bag"></span></button>
+      <button class="nav-btn"><span class="fa fa-user"></span></button>
+    </div>
+  </header>
+
+  <section class="about-us">
+    <div class="about-us-content">
+      <div class="about-us-text">
+        <h2>About Ayushvera International</h2>
+        <p>
+          Ayushvera International is dedicated to bringing the best of Ayurveda to the world. Our mission is to promote holistic wellness through natural, authentic, and premium quality Ayurvedic products. With a team of passionate experts and a commitment to sustainability, we strive to make a positive impact on global health and well-being.
+        </p>
+        <p>
+          <strong>Our Vision:</strong> To be a global leader in Ayurvedic wellness, trusted for quality and integrity.<br>
+          <strong>Our Values:</strong> Authenticity, Sustainability, Innovation, and Customer Satisfaction.
+        </p>
+      </div>
+      <div class="about-us-image">
+        <img src="images/about-image.png" alt="About Ayushvera">
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>All rights reserved by Ayushvera International &copy; 2025</p>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

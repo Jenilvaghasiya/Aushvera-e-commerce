@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayushvera Globalbiz - Premium Herbal Products</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0B2A60;
+      --secondary: #D4AF37;
+      --accent: #B8860B;
+      --light: #F5F5DC;
+      --dark: #071b42;
+      --text-dark: #333;
+      --text-light: #f8f9fa;
+      --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    p, span, a, button {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .text-gold {
+      color: var(--secondary);
+    }
+
+    .bg-primary-dark {
+      background-color: var(--primary);
+    }
+
+    /* Header Styles */
+    header {
+      width: 100%;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: var(--shadow-sm);
+      padding: 10px 40px;
+    }
+
+    header.scrolled .nav-link {
+      color: var(--text-dark) !important;
+    }
+
+    header.scrolled .btn-outline-light {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    header.scrolled .btn-outline-light:hover {
+      background: var(--primary);
+      color: white !important;
+    }
+
+    .logo img {
+      height: 70px;
+      transition: var(--transition);
+    }
+
+    header.scrolled .logo img {
+      height: 60px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      margin: 0 18px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      font-size: 16px;
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--secondary);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(7, 27, 66, 0.8) 0%, rgba(7, 27, 66, 0.4) 100%);
+      z-index: 1;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      max-width: 600px;
+      padding: 0 40px;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+
+    .highlight {
+      color: var(--secondary);
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+    }
+
+    .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--secondary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s ease;
+    }
+
+    .highlight:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .btn-hero {
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+
+    .btn-hero-primary {
+      background: var(--secondary);
+      color: var(--primary);
+      border: 2px solid var(--secondary);
+    }
+
+    .btn-hero-primary:hover {
+      background: transparent;
+      color: var(--secondary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-hero-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-hero-outline:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Featured Products Section */
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title h2 {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .section-title .divider {
+      width: 80px;
+      height: 4px;
+      background: var(--secondary);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 5px 15px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+
+    .product-img {
+      height: 250px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f9fa;
+    }
+
+    .product-img img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .product-img img {
+      transform: scale(1.05);
+    }
+
+    .product-body {
+      padding: 25px;
+    }
+
+    .product-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .product-description {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .product-rating {
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    .btn-product {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-view {
+      background: var(--primary);
+      color: white;
+      border: 2px solid var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .btn-view:hover {
+      background: transparent;
+      color: var(--primary);
+    }
+
+    .btn-cart {
+      background: var(--secondary);
+      color: var(--primary);
+      border: 2px solid var(--secondary);
+    }
+
+    .btn-cart:hover {
+      background: transparent;
+      color: var(--secondary);
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 100px 0;
+      background: linear-gradient(to bottom, #f9f9f9 0%, white 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-img {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      height: 100%;
+      min-height: 400px;
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .about-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-content {
+      padding-left: 50px;
+    }
+
+    .about-content h2 {
+      color: var(--primary);
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-content h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+    }
+
+    .about-features {
+      margin-top: 30px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+
+    /* Team Section */
+    .team-section {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .team-member {
+      text-align: center;
+      margin-bottom: 30px;
+      transition: var(--transition);
+    }
+
+    .team-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      border: 5px solid white;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .team-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .team-member:hover .team-img {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .team-member:hover .team-img img {
+      transform: scale(1.1);
+    }
+
+    .team-social {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(11, 42, 96, 0.8);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .team-member:hover .team-social {
+      opacity: 1;
+    }
+
+    .team-social a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .team-social a:hover {
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .team-info h4 {
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .team-info p {
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    /* Testimonials */
+    .testimonial-section {
+      padding: 100px 0;
+      background: linear-gradient(to right, var(--primary) 0%, var(--dark) 100%);
+      color: white;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 15px;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .testimonial-text::before,
+    .testimonial-text::after {
+      content: '"';
+      font-size: 3rem;
+      color: var(--secondary);
+      opacity: 0.3;
+      position: absolute;
+    }
+
+    .testimonial-text::before {
+      top: -20px;
+      left: -10px;
+    }
+
+    .testimonial-text::after {
+      bottom: -40px;
+      right: -10px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+
+    .author-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h5 {
+      margin-bottom: 5px;
+      color: var(--secondary);
+    }
+
+    .author-info p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .contact-form {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .contact-form:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-control {
+      padding: 12px 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+    }
+
+    .btn-submit {
+      background: var(--primary);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      border: none;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      background: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-info {
+      padding-left: 50px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--secondary);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+
+    .contact-text h4 {
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--primary);
+      color: white;
+      padding: 60px 0 20px;
+    }
+
+    .footer-logo img {
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .footer-about p {
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      margin-right: 10px;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .footer-links h4 {
+      color: var(--secondary);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-links h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--secondary);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: white;
+      opacity: 0.8;
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .footer-links a::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--secondary);
+      padding-left: 10px;
+    }
+
+    .footer-links a:hover::before {
+      width: 20px;
+    }
+
+    .footer-newsletter p {
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 10px 15px;
+      border-radius: 30px 0 0 30px;
+      border: none;
+      outline: none;
+    }
+
+    .newsletter-btn {
+      background: var(--secondary);
+      color: var(--primary);
+      border: none;
+      padding: 0 20px;
+      border-radius: 0 30px 30px 0;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-btn:hover {
+      background: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      opacity: 0.6;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(20px);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1199.98px) {
+      .hero-title {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      header {
+        padding: 15px 20px;
+      }
+      
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .about-content {
+        padding-left: 0;
+        margin-top: 40px;
+      }
+      
+      .contact-info {
+        padding-left: 0;
+        margin-top: 40px;
+      }
+      
+      .footer-links {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+      
+      .nav-link {
+        margin: 0 10px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      header {
+        padding: 10px 15px;
+      }
+      
+      .logo img {
+        height: 50px;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-content {
+        padding: 0 20px;
+      }
+      
+      .btn-hero {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="main-header">
+    <div class="logo">
+      <img src="Images/logo bg.png" alt="Ayushvera Logo" />
+    </div>
+    <nav class="d-none d-lg-flex">
+      <a href="#" class="nav-link active">Home</a>
+      <a href="product.html" class="nav-link">Products</a>
+      <a href="aboutus.html" class="nav-link">About Us</a>
+      <a href="#" class="nav-link">Contact</a>
+      <a href="#" class="nav-link">Shop Now</a>
+    </nav>
+    <div class="icons">
+      <button class="btn btn-outline-light me-2"><i class="fas fa-shopping-bag"></i></button>
+      <button class="btn btn-outline-light"><i class="fas fa-user"></i></button>
+      <button class="btn btn-outline-light d-lg-none ms-2" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu d-lg-none">
+    <!-- Mobile menu content would go here -->
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="intro 2.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    
+    <div class="container">
+      <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+        <h1 class="hero-title animate__animated animate__fadeInDown">Ayushvera<br><span class="text-gold">Herbal Tea</span></h1>
+        <p class="hero-subtitle animate__animated animate__fadeIn animate__delay-1s">
+          Experience the perfect blend of nature...<br>
+          Ayushvera Herbal Tea is crafted with the finest ingredients to promote health and wellness.<br> 
+          Our products are <span class="highlight">reliable</span> and <span class="highlight">lab tested</span>, ensuring you get the best quality in every sip.
+        </p>
+        <div class="animate__animated animate__fadeIn animate__delay-2s">
+          <button class="btn btn-hero btn-hero-primary">Explore Products</button>
+          <button class="btn btn-hero btn-hero-outline">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="py-5 my-5" id="products">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Our Premium Products</h2>
+        <div class="divider"></div>
+      </div>
+      
+      <div class="row">
+        <!-- Product 1 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="product-card">
+            <span class="product-badge">Best Seller</span>
+            <div class="product-img">
+              <img src="Images/tea1.png" alt="Ayushvera Herbal Tea" class="img-fluid">
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Ayushvera Herbal Tea</h3>
+              <p class="product-description">Premium herbal blend for relaxation and detoxification. Naturally caffeine-free.</p>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(42 reviews)</span>
+              </div>
+              <div class="product-price">₹499.00</div>
+              <button class="btn btn-product btn-view">View Details</button>
+              <button class="btn btn-product btn-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="product-card">
+            <span class="product-badge">New Arrival</span>
+            <div class="product-img">
+              <img src="Images/tea2.png" alt="Ayushvera Immunity Boost" class="img-fluid">
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Immunity Boost Tea</h3>
+              <p class="product-description">Powerful blend to strengthen your immune system naturally.</p>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(28 reviews)</span>
+              </div>
+              <div class="product-price">₹599.00</div>
+              <button class="btn btn-product btn-view">View Details</button>
+              <button class="btn btn-product btn-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="product-card">
+            <div class="product-img">
+              <img src="Images/tea3.png" alt="Ayushvera Digestive Tea" class="img-fluid">
+            </div>
+            <div class="product-body">
+              <h3 class="product-title">Digestive Wellness Tea</h3>
+              <p class="product-description">Soothing blend to support healthy digestion and gut health.</p>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(56 reviews)</span>
+              </div>
+              <div class="product-price">₹549.00</div>
+              <button class="btn btn-product btn-view">View Details</button>
+              <button class="btn btn-product btn-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+          <div class="about-img">
+            <img src="Images/aboutus.jpg" alt="About Ayushvera" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="about-content">
+            <h2>About Ayushvera</h2>
+            <p>Ayushvera Globalbiz is dedicated to bringing the wisdom of Ayurveda to the modern world. Founded with a vision to make holistic health accessible and trustworthy, we combine ancient knowledge with modern science.</p>
+            <p>Our products are crafted with the highest quality herbs and ingredients, sourced sustainably from trusted growers. Each blend undergoes rigorous testing to ensure purity, potency, and safety.</p>
+            
+            <div class="about-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-leaf"></i>
+                </div>
+                <div>
+                  <h4>100% Natural</h4>
+                  <p>No artificial additives or preservatives</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-flask"></i>
+                </div>
+                <div>
+                  <h4>Lab Tested</h4>
+                  <p>Rigorous quality control for your safety</p>
+                </div>
+              </div>
+              
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-award"></i>
+                </div>
+                <div>
+                  <h4>Certified Organic</h4>
+                  <p>Grown without synthetic pesticides</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Meet Our Team</h2>
+        <div class="divider"></div>
+      </div>
+      
+      <div class="row">
+        <!-- Team Member 1 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="Images/team1.png" alt="Nikunj Makwana">
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Nikunj Makwana</h4>
+              <p>Founder & CEO</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 2 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="Images/team2.png" alt="Ravi">
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Ravi</h4>
+              <p>Chief Financial Officer</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 3 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="Images/harshil.jpg" alt="Harshil Vadher">
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Vadher Harshil</h4>
+              <p>Web Developer</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 4 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="team-member">
+            <div class="team-img">
+              <img src="Images/akash.jpg" alt="Akash Chudasama">
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Akash Chudasama</h4>
+              <p>Web Developer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonial-section py-5">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2 class="text-white">What Our Customers Say</h2>
+        <div class="divider"></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              The Ayushvera Herbal Tea has transformed my morning routine. I feel more energized and focused throughout the day without the jitters of coffee.
+            </div>
+            <div class="testimonial-author">
+              <div class="author-img">
+                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya Patel">
+              </div>
+              <div class="author-info">
+                <h5>Priya Patel</h5>
+                <p>Mumbai, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              As someone with digestive issues, the Digestive Wellness Tea has been a game-changer. I drink it after meals and feel so much better.
+            </div>
+            <div class="testimonial-author">
+              <div class="author-img">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rahul Sharma">
+              </div>
+              <div class="author-info">
+                <h5>Rahul Sharma</h5>
+                <p>Delhi, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="testimonial-card">
+            <div class="testimonial-text">
+              The Immunity Boost Tea helped me get through flu season without getting sick. The quality is exceptional and the taste is delightful.
+            </div>
+            <div class="testimonial-author">
+              <div class="author-img">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ananya Gupta">
+              </div>
+              <div class="author-info">
+                <h5>Ananya Gupta</h5>
+                <p>Bangalore, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Get In Touch</h2>
+        <div class="divider"></div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+          <div class="contact-form">
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Your Email" required>
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control" placeholder="Your Phone">
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Our Location</h4>
+                <p>Gandhidham, Gujarat, India</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email Us</h4>
+                <p>ayushveraglobalbiz1718@gmail.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Call Us</h4>
+                <p>+91 81603 36739</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Business Hours</h4>
+                <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="footer-about">
+            <div class="footer-logo">
+              <img src="Images/logo bg.png" alt="Ayushvera Logo" style="height: 80px;">
+            </div>
+            <p>Bringing the wisdom of Ayurveda to the modern world with premium herbal products crafted for health and wellness.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#team">Our Team</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="#">Herbal Tea</a></li>
+              <li><a href="#">Immunity Boost</a></li>
+              <li><a href="#">Digestive Wellness</a></li>
+              <li><a href="#">Stress Relief</a></li>
+              <li><a href="#">All Products</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Subscribe to our newsletter for the latest updates, offers, and wellness tips.</p>
+            <form class="newsletter-form">
+              <input type="email" class="newsletter-input" placeholder="Your Email" required>
+              <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+            </form>
+            <p>We respect your privacy. Unsubscribe at any time.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Ayushvera Globalbiz. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS animation library
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Lazy load images
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+          observer.unobserve(img);
+        }
+      });
+    });
+    
+    lazyImages.forEach(img => imageObserver.observe(img));
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
