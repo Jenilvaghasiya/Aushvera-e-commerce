@@ -933,12 +933,13 @@
       <a href="#" class="nav-link active">Home</a>
       <a href="product.html" class="nav-link">Products</a>
       <a href="aboutus.html" class="nav-link">About Us</a>
-      <a href="#" class="nav-link">Contact</a>
+      <a href="contactus.html" class="nav-link">Contact</a>
       <a href="#" class="nav-link">Shop Now</a>
     </nav>
+    <div class="header-welcome" style="margin-right: 16px; font-weight: 500; color: var(--primary); display: flex; align-items: center;"></div>
     <div class="icons">
-      <button class="btn btn-outline-light me-2"><i class="fas fa-shopping-bag"></i></button>
-      <button class="btn btn-outline-light"><i class="fas fa-user"></i></button>
+      <a href="cart.html" class="btn btn-outline-light me-2"><i class="fas fa-shopping-bag"></i></a>
+      <a href="profile.html" class="btn btn-outline-light"><i class="fas fa-user"></i></a>
       <button class="btn btn-outline-light d-lg-none ms-2" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
     </div>
   </header>
@@ -964,7 +965,7 @@
           Our products are <span class="highlight">reliable</span> and <span class="highlight">lab tested</span>, ensuring you get the best quality in every sip.
         </p>
         <div class="animate__animated animate__fadeIn animate__delay-2s">
-          <button class="btn btn-hero btn-hero-primary">Explore Products</button>
+          <a href="product.html" class="btn btn-hero btn-hero-primary">Explore Products</a>
           <button class="btn btn-hero btn-hero-outline">Learn More</button>
         </div>
       </div>
@@ -979,81 +980,8 @@
         <div class="divider"></div>
       </div>
       
-      <div class="row">
+      <div class="row" id="product-container">
         <!-- Product 1 -->
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="product-card">
-            <span class="product-badge">Best Seller</span>
-            <div class="product-img">
-              <img src="Images/tea1.png" alt="Ayushvera Herbal Tea" class="img-fluid">
-            </div>
-            <div class="product-body">
-              <h3 class="product-title">Ayushvera Herbal Tea</h3>
-              <p class="product-description">Premium herbal blend for relaxation and detoxification. Naturally caffeine-free.</p>
-              <div class="product-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>(42 reviews)</span>
-              </div>
-              <div class="product-price">₹499.00</div>
-              <button class="btn btn-product btn-view">View Details</button>
-              <button class="btn btn-product btn-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Product 2 -->
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="product-card">
-            <span class="product-badge">New Arrival</span>
-            <div class="product-img">
-              <img src="Images/tea2.png" alt="Ayushvera Immunity Boost" class="img-fluid">
-            </div>
-            <div class="product-body">
-              <h3 class="product-title">Immunity Boost Tea</h3>
-              <p class="product-description">Powerful blend to strengthen your immune system naturally.</p>
-              <div class="product-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <span>(28 reviews)</span>
-              </div>
-              <div class="product-price">₹599.00</div>
-              <button class="btn btn-product btn-view">View Details</button>
-              <button class="btn btn-product btn-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Product 3 -->
-        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="product-card">
-            <div class="product-img">
-              <img src="Images/tea3.png" alt="Ayushvera Digestive Tea" class="img-fluid">
-            </div>
-            <div class="product-body">
-              <h3 class="product-title">Digestive Wellness Tea</h3>
-              <p class="product-description">Soothing blend to support healthy digestion and gut health.</p>
-              <div class="product-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>(56 reviews)</span>
-              </div>
-              <div class="product-price">₹549.00</div>
-              <button class="btn btn-product btn-view">View Details</button>
-              <button class="btn btn-product btn-cart">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1069,8 +997,9 @@
         <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
           <div class="about-content">
             <h2>About Ayushvera</h2>
-            <p>Ayushvera Globalbiz is dedicated to bringing the wisdom of Ayurveda to the modern world. Founded with a vision to make holistic health accessible and trustworthy, we combine ancient knowledge with modern science.</p>
-            <p>Our products are crafted with the highest quality herbs and ingredients, sourced sustainably from trusted growers. Each blend undergoes rigorous testing to ensure purity, potency, and safety.</p>
+            <p>At Aushvera GlobalBiz, we don't just offer natural products — we offer an experience of elegance, heritage, and refinement. Every creation is a tribute to nature's intelligence, crafted with care, precision, and a deep reverence for ancient traditions that have stood the test of time.</p>
+            <p>Our ingredients are hand-selected from the roots of history, inspired by sacred knowledge from across India and beyond from healing herbs whispered through Vedic texts to botanical rituals once reserved for kings and sages. We transform this wisdom into world-class products, blending timeless purity with modern luxury.</p>
+            <p>But Aushvera is more than purity. We bring you the essence of class, the richness of culture, and the luxurious feeling of intentional living. From the way our products look and feel, to the experience they deliver — every detail is designed to elevate your lifestyle and awaken your senses.</p>
             
             <div class="about-features">
               <div class="feature-item">
@@ -1162,7 +1091,7 @@
               <div class="team-social">
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/harshil_vadher_01?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
               </div>
             </div>
             <div class="team-info">
@@ -1180,7 +1109,7 @@
               <div class="team-social">
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/_akash_chudasama_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
               </div>
             </div>
             <div class="team-info">
@@ -1459,6 +1388,171 @@
     mobileMenuBtn.addEventListener('click', function() {
       mobileMenu.classList.toggle('show');
     });
+
+    // Fetch and display the username in the header
+    fetch('php/user_info.php')
+      .then(response => response.json())
+      .then(data => {
+        if (data && data.name) {
+          document.querySelector('.header-welcome').textContent = `Welcome, ${data.name}`;
+        } else {
+          document.querySelector('.header-welcome').textContent = '';
+        }
+      })
+      .catch(() => {
+        document.querySelector('.header-welcome').textContent = '';
+      });
+
+    //fetch products from fetch_products.php file
+    fetch('php/fetch_products.php')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(products => {
+        const productContainer = document.getElementById('product-container');
+        
+        if (products.length === 0) {
+          // Show fallback content when no products are found
+          productContainer.innerHTML = `
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
+              <div class="product-card">
+                <div class="product-badge">Premium</div>
+                <div class="product-img">
+                  <img src="Images/tea1.png" alt="Ayushvera Herbal Tea">
+                </div>
+                <div class="product-body">
+                  <h5 class="product-title">Ayushvera Herbal Tea</h5>
+                  <p class="product-description">Premium herbal tea crafted with natural ingredients for your wellness.</p>
+                  <div class="product-price">₹299</div>
+                  <div class="product-rating">
+                    ${generateStars(4.5)}
+                    <span class="ms-2">(4.5)</span>
+                  </div>
+                  <a href="product1.html" class="btn btn-product btn-view">View Details</a>
+                  <button class="btn btn-product btn-cart">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          `;
+          return;
+        }
+        
+        products.forEach(product => {
+          const productCard = `
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="${Math.random() * 300}">
+              <div class="product-card">
+                <div class="product-badge">Premium</div>
+                <div class="product-img">
+                  <img src="Admin/php/${product.image}" alt="${product.name}" onerror="this.src='Images/tea1.png'">
+                </div>
+                <div class="product-body">
+                  <h5 class="product-title">${product.name}</h5>
+                  <p class="product-description">${product.description || 'Premium herbal tea crafted with natural ingredients for your wellness.'}</p>
+                  <div class="product-price">₹${product.price}</div>
+                  <div class="product-rating">
+                    ${generateStars(4.5)}
+                    <span class="ms-2">(4.5)</span>
+                  </div>
+                  <a href="product1.html?id=${product.id}" class="btn btn-product btn-view">View Details</a>
+                  <button class="btn btn-product btn-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          `;
+          productContainer.innerHTML += productCard;
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+        // Fallback content if fetch fails
+        const productContainer = document.getElementById('product-container');
+        productContainer.innerHTML = `
+          <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up">
+            <div class="product-card">
+              <div class="product-badge">Premium</div>
+              <div class="product-img">
+                <img src="Images/tea1.png" alt="Ayushvera Herbal Tea">
+              </div>
+              <div class="product-body">
+                <h5 class="product-title">Ayushvera Herbal Tea</h5>
+                <p class="product-description">Premium herbal tea crafted with natural ingredients for your wellness.</p>
+                <div class="product-price">₹299</div>
+                <div class="product-rating">
+                  ${generateStars(4.5)}
+                  <span class="ms-2">(4.5)</span>
+                </div>
+                <a href="product1.html" class="btn btn-product btn-view">View Details</a>
+                <button class="btn btn-product btn-cart">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+    // Add to cart function
+    function addToCart(productId) {
+      // Get cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('ayushvera_cart') || '[]');
+      
+      // Check if product already exists in cart
+      const existingItem = cart.find(item => item.id == productId);
+      
+      if (existingItem) {
+        existingItem.quantity += 1;
+        localStorage.setItem('ayushvera_cart', JSON.stringify(cart));
+        alert('Product added to cart!');
+        window.location.href = 'cart.html';
+        return;
+      }
+
+      // If product not in cart, we need to fetch its details
+      fetch(`php/get_product.php?id=${productId}`)
+        .then(response => response.json())
+        .then(product => {
+          if (product.error) {
+            alert('Product not found!');
+            return;
+          }
+
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.images && product.images.length > 0 ? product.images[0] : 'tea1.png',
+            sku: product.sku || 'N/A',
+            category: product.category || 'Herbal Tea',
+            quantity: 1
+          });
+          
+          // Save to localStorage
+          localStorage.setItem('ayushvera_cart', JSON.stringify(cart));
+          
+          // Show success message and redirect to cart
+          alert('Product added to cart!');
+          window.location.href = 'cart.html';
+        })
+        .catch(error => {
+          console.error('Error adding to cart:', error);
+          alert('Error adding product to cart');
+        });
+    }
+
+    function generateStars(rating) {
+      let stars = '';
+      for (let i = 1; i <= 5; i++) {
+        if (rating >= i) {
+          stars += '<i class="fas fa-star"></i>';
+        } else if (rating >= i - 0.5) {
+          stars += '<i class="fas fa-star-half-alt"></i>';
+        } else {
+          stars += '<i class="far fa-star"></i>';
+        }
+      }
+      return stars;
+    }
   </script>
 </body>
 </html>

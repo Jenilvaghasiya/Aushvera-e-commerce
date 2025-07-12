@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | Ayushvera - Premium Herbal Products</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0B2A60;
+      --secondary: #D4AF37;
+      --accent: #B8860B;
+      --light: #F5F5DC;
+      --dark: #071b42;
+      --text-dark: #333;
+      --text-light: #f8f9fa;
+      --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+      line-height: 1.7;
+      padding-top: 90px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    p, span, a, button {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .text-gold {
+      color: var(--secondary);
+    }
+
+    .bg-primary-dark {
+      background-color: var(--primary);
+    }
+
+    /* Header Styles */
+    header {
+      width: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .logo img {
+      height: 60px;
+      transition: var(--transition);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      margin: 0 18px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 16px;
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--secondary);
+    }
+
+    /* Checkout Hero */
+    .checkout-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      color: white;
+      padding: 60px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .checkout-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('Images/tea-pattern.png') center/cover;
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    .checkout-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .checkout-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .checkout-header p {
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+
+    /* Checkout Content */
+    .checkout-content {
+      padding: 40px 0;
+    }
+
+    .checkout-section {
+      background: white;
+      border-radius: 15px;
+      box-shadow: var(--shadow-sm);
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: var(--transition);
+    }
+
+    .checkout-section:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--secondary);
+    }
+
+    .section-title i {
+      color: var(--secondary);
+      font-size: 1.5rem;
+      margin-right: 15px;
+    }
+
+    .section-title h2 {
+      color: var(--primary);
+      margin-bottom: 0;
+      font-size: 1.5rem;
+    }
+
+    /* Cart Items */
+    .cart-item {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      transition: var(--transition);
+    }
+
+    .cart-item:hover {
+      box-shadow: var(--shadow-sm);
+      border-color: var(--secondary);
+    }
+
+    .cart-item-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    .cart-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cart-item-details {
+      flex: 1;
+    }
+
+    .cart-item-name {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .cart-item-price {
+      color: var(--secondary);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .cart-item-quantity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .quantity-btn {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ddd;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .quantity-btn:hover {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    .quantity-input {
+      width: 50px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 5px;
+    }
+
+    .cart-item-total {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    /* Address Selection */
+    .address-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .address-option {
+      border: 2px solid #eee;
+      border-radius: 10px;
+      padding: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .address-option:hover {
+      border-color: var(--secondary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .address-option.selected {
+      border-color: var(--secondary);
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    .address-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .address-option input[type="radio"]:checked + .address-content {
+      border-color: var(--secondary);
+    }
+
+    .address-content {
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 15px;
+      transition: var(--transition);
+    }
+
+    .address-type-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .address-type-home {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .address-type-work {
+      background: #cce5ff;
+      color: #004085;
+    }
+
+    .address-type-other {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .address-name {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .address-details {
+      color: #666;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .address-phone {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .add-new-address {
+      border: 2px dashed #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #666;
+      transition: var(--transition);
+    }
+
+    .add-new-address:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+    }
+
+    .add-new-address i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    /* Payment Options */
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .payment-option {
+      border: 2px solid #eee;
+      border-radius: 10px;
+      padding: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .payment-option:hover {
+      border-color: var(--secondary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .payment-option.selected {
+      border-color: var(--secondary);
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    .payment-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .payment-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .payment-title {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .payment-description {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Order Summary */
+    .order-summary {
+      background: #f8f9fa;
+      border-radius: 10px;
+      padding: 25px;
+      position: sticky;
+      top: 120px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .summary-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .summary-total {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary);
+      border-top: 2px solid var(--secondary);
+      padding-top: 15px;
+      margin-top: 15px;
+    }
+
+    /* Place Order Button */
+    .place-order-btn {
+      background: var(--secondary);
+      color: var(--primary);
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      width: 100%;
+      transition: var(--transition);
+      margin-top: 20px;
+    }
+
+    .place-order-btn:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .place-order-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 991.98px) {
+      header {
+        padding: 15px 20px;
+      }
+      
+      .logo img {
+        height: 50px;
+      }
+      
+      .checkout-hero {
+        padding: 40px 0 30px;
+      }
+      
+      .checkout-header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .nav-link {
+        margin: 0 10px;
+        font-size: 14px;
+      }
+      
+      .cart-item {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .cart-item-img {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+      
+      .address-options,
+      .payment-options {
+        grid-template-columns: 1fr;
+      }
+      
+      .order-summary {
+        position: static;
+        margin-top: 30px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      header {
+        padding: 10px 15px;
+      }
+      
+      .checkout-section {
+        padding: 20px;
+      }
+      
+      .cart-item {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="Images/logo bg.png" alt="Ayushvera Logo" />
+    </div>
+    <nav class="d-none d-lg-flex">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="product.html" class="nav-link">Products</a>
+      <a href="aboutus.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="#" class="nav-link">Shop Now</a>
+    </nav>
+    <div class="icons">
+      <button class="btn btn-outline-secondary me-2"><i class="fas fa-shopping-bag"></i></button>
+      <button class="btn btn-outline-secondary"><i class="fas fa-user"></i></button>
+      <button class="btn btn-outline-secondary d-lg-none ms-2" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Checkout Hero -->
+  <section class="checkout-hero">
+    <div class="container">
+      <div class="checkout-header" data-aos="fade-up">
+        <h1>Checkout</h1>
+        <p>Complete your purchase and get your premium herbal products</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout Content -->
+  <div class="checkout-content">
+    <div class="container">
+      <div class="row">
+        <!-- Main Checkout Area -->
+        <div class="col-lg-8">
+          <!-- Cart Items Section -->
+          <div class="checkout-section" data-aos="fade-up">
+            <div class="section-title">
+              <i class="fas fa-shopping-cart"></i>
+              <h2>Your Cart Items</h2>
+            </div>
+            <div id="cartItems">
+              <!-- Cart items will be loaded here -->
+            </div>
+          </div>
+
+          <!-- Address Selection Section -->
+          <div class="checkout-section" data-aos="fade-up">
+            <div class="section-title">
+              <i class="fas fa-map-marker-alt"></i>
+              <h2>Delivery Address</h2>
+            </div>
+            <div class="address-options" id="addressOptions">
+              <!-- Address options will be loaded here -->
+            </div>
+            <button class="btn btn-outline-primary" onclick="showAddAddressModal()">
+              <i class="fas fa-plus"></i> Add New Address
+            </button>
+          </div>
+
+          <!-- Payment Method Section -->
+          <div class="checkout-section" data-aos="fade-up">
+            <div class="section-title">
+              <i class="fas fa-credit-card"></i>
+              <h2>Payment Method</h2>
+            </div>
+            <div class="payment-options" id="paymentOptions">
+              <div class="payment-option" onclick="selectPayment('cod')">
+                <input type="radio" name="payment" value="cod" id="cod">
+                <div class="payment-icon">
+                  <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <div class="payment-title">Cash on Delivery</div>
+                <div class="payment-description">Pay when you receive your order</div>
+              </div>
+              
+              <div class="payment-option" onclick="selectPayment('upi')">
+                <input type="radio" name="payment" value="upi" id="upi">
+                <div class="payment-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="payment-title">UPI Payment</div>
+                <div class="payment-description">Pay using UPI apps</div>
+              </div>
+              
+              <div class="payment-option" onclick="selectPayment('card')">
+                <input type="radio" name="payment" value="card" id="card">
+                <div class="payment-icon">
+                  <i class="fas fa-credit-card"></i>
+                </div>
+                <div class="payment-title">Debit/Credit Card</div>
+                <div class="payment-description">Secure card payment</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order Summary Sidebar -->
+        <div class="col-lg-4">
+          <div class="order-summary" data-aos="fade-left">
+            <h3 class="mb-4">Order Summary</h3>
+            <div id="orderSummary">
+              <!-- Order summary will be loaded here -->
+            </div>
+            <button class="place-order-btn" id="placeOrderBtn" onclick="placeOrder()">
+              <i class="fas fa-lock"></i> Place Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS animation library
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+
+    // Global variables
+    let cartItems = [];
+    let selectedAddress = null;
+    let selectedPayment = null;
+    let userAddresses = [];
+
+    // Load cart items
+    async function loadCartItems() {
+      try {
+        const response = await fetch('php/cart_operations.php?action=get_cart', {
+          credentials: 'same-origin'
+        });
+        
+        const data = await response.json();
+        if (data.success) {
+          cartItems = data.cart_items || [];
+          displayCartItems();
+          updateOrderSummary();
+        } else {
+          console.error('Failed to load cart items:', data.message);
+        }
+      } catch (error) {
+        console.error('Error loading cart items:', error);
+      }
+    }
+
+    // Display cart items
+    function displayCartItems() {
+      const cartContainer = document.getElementById('cartItems');
+      if (!cartContainer) return;
+
+      if (cartItems.length === 0) {
+        cartContainer.innerHTML = `
+          <div class="text-center py-4">
+            <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+            <h4>Your cart is empty</h4>
+            <p>Add some products to your cart to continue</p>
+            <a href="product.html" class="btn btn-primary">Continue Shopping</a>
+          </div>
+        `;
+        return;
+      }
+
+      cartContainer.innerHTML = cartItems.map(item => `
+        <div class="cart-item">
+          <div class="cart-item-img">
+            <img src="php/uploads/${item.image}" alt="${item.name}">
+          </div>
+          <div class="cart-item-details">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">₹${item.price}</div>
+            <div class="cart-item-quantity">
+              <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+              <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="updateQuantity(${item.id}, this.value - ${item.quantity})">
+              <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+            </div>
+          </div>
+          <div class="cart-item-total">
+            ₹${(item.price * item.quantity).toFixed(2)}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Update quantity
+    async function updateQuantity(productId, change) {
+      try {
+        const response = await fetch('php/cart_operations.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          body: JSON.stringify({
+            action: 'update_quantity',
+            product_id: productId,
+            quantity: change
+          }),
+          credentials: 'same-origin'
+        });
+        
+        const data = await response.json();
+        if (data.success) {
+          loadCartItems();
+        } else {
+          alert('Failed to update quantity: ' + data.message);
+        }
+      } catch (error) {
+        console.error('Error updating quantity:', error);
+        alert('Failed to update quantity');
+      }
+    }
+
+    // Load user addresses
+    async function loadUserAddresses() {
+      try {
+        const response = await fetch('php/user_addresses.php', {
+          credentials: 'same-origin'
+        });
+        
+        const data = await response.json();
+        if (data.success) {
+          userAddresses = data.addresses || [];
+          displayAddressOptions();
+        } else {
+          console.error('Failed to load addresses:', data.message);
+        }
+      } catch (error) {
+        console.error('Error loading addresses:', error);
+      }
+    }
+
+    // Display address options
+    function displayAddressOptions() {
+      const addressContainer = document.getElementById('addressOptions');
+      if (!addressContainer) return;
+
+      if (userAddresses.length === 0) {
+        addressContainer.innerHTML = `
+          <div class="text-center py-4">
+            <i class="fas fa-map-marker-alt fa-3x text-muted mb-3"></i>
+            <h4>No addresses found</h4>
+            <p>Please add a delivery address to continue</p>
+            <button class="btn btn-primary" onclick="showAddAddressModal()">Add Address</button>
+          </div>
+        `;
+        return;
+      }
+
+      addressContainer.innerHTML = userAddresses.map(address => {
+        const addressTypeClass = `address-type-${address.address_type}`;
+        const addressTypeText = address.address_type.charAt(0).toUpperCase() + address.address_type.slice(1);
+        
+        return `
+          <div class="address-option" onclick="selectAddress(${address.id})">
+            <input type="radio" name="address" value="${address.id}" id="address_${address.id}">
+            <div class="address-content">
+              <div class="address-type-badge ${addressTypeClass}">${addressTypeText}</div>
+              <div class="address-name">${address.full_name}</div>
+              <div class="address-details">
+                ${address.address_line1}<br>
+                ${address.address_line2 ? address.address_line2 + '<br>' : ''}
+                ${address.city}, ${address.state} ${address.pincode}<br>
+                ${address.country}
+              </div>
+              <div class="address-phone">${address.phone_number}</div>
+            </div>
+          </div>
+        `;
+      }).join('') + `
+        <div class="address-option add-new-address" onclick="showAddAddressModal()">
+          <i class="fas fa-plus"></i>
+          <span>Add New Address</span>
+        </div>
+      `;
+    }
+
+    // Select address
+    function selectAddress(addressId) {
+      selectedAddress = addressId;
+      
+      // Update UI
+      document.querySelectorAll('.address-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      
+      const selectedOption = document.querySelector(`input[value="${addressId}"]`).closest('.address-option');
+      if (selectedOption) {
+        selectedOption.classList.add('selected');
+      }
+      
+      updatePlaceOrderButton();
+    }
+
+    // Select payment method
+    function selectPayment(paymentMethod) {
+      selectedPayment = paymentMethod;
+      
+      // Update UI
+      document.querySelectorAll('.payment-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      
+      const selectedOption = document.querySelector(`input[value="${paymentMethod}"]`).closest('.payment-option');
+      if (selectedOption) {
+        selectedOption.classList.add('selected');
+      }
+      
+      updatePlaceOrderButton();
+    }
+
+    // Update order summary
+    function updateOrderSummary() {
+      const summaryContainer = document.getElementById('orderSummary');
+      if (!summaryContainer) return;
+
+      const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const shipping = subtotal > 500 ? 0 : 50; // Free shipping above ₹500
+      const total = subtotal + shipping;
+
+      summaryContainer.innerHTML = `
+        <div class="summary-item">
+          <span>Subtotal (${cartItems.length} items)</span>
+          <span>₹${subtotal.toFixed(2)}</span>
+        </div>
+        <div class="summary-item">
+          <span>Shipping</span>
+          <span>${shipping === 0 ? 'Free' : '₹' + shipping.toFixed(2)}</span>
+        </div>
+        <div class="summary-item summary-total">
+          <span>Total</span>
+          <span>₹${total.toFixed(2)}</span>
+        </div>
+      `;
+    }
+
+    // Update place order button
+    function updatePlaceOrderButton() {
+      const placeOrderBtn = document.getElementById('placeOrderBtn');
+      if (!placeOrderBtn) return;
+
+      const canPlaceOrder = selectedAddress && selectedPayment && cartItems.length > 0;
+      
+      placeOrderBtn.disabled = !canPlaceOrder;
+      
+      if (!canPlaceOrder) {
+        placeOrderBtn.innerHTML = '<i class="fas fa-lock"></i> Complete Checkout';
+      } else {
+        placeOrderBtn.innerHTML = '<i class="fas fa-lock"></i> Place Order';
+      }
+    }
+
+    // Show add address modal
+    function showAddAddressModal() {
+      // For now, redirect to profile page to add address
+      if (confirm('Would you like to add a new address? You will be redirected to your profile page.')) {
+        window.location.href = 'profile.html#addresses';
+      }
+    }
+
+    // Place order
+    async function placeOrder() {
+      if (!selectedAddress || !selectedPayment) {
+        alert('Please select both delivery address and payment method');
+        return;
+      }
+
+      if (cartItems.length === 0) {
+        alert('Your cart is empty');
+        return;
+      }
+
+      try {
+        const response = await fetch('php/place_order.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          body: JSON.stringify({
+            address_id: selectedAddress,
+            payment_method: selectedPayment,
+            cart_items: cartItems
+          }),
+          credentials: 'same-origin'
+        });
+        
+        const data = await response.json();
+        if (data.success) {
+          alert('Order placed successfully! Your order number is: ' + data.order_id);
+          window.location.href = 'profile.html#orders';
+        } else {
+          throw new Error(data.message || 'Failed to place order');
+        }
+      } catch (error) {
+        console.error('Error placing order:', error);
+        alert('Failed to place order. Please try again.');
+      }
+    }
+
+    // Initialize checkout page
+    document.addEventListener('DOMContentLoaded', function() {
+      loadCartItems();
+      loadUserAddresses();
+      updatePlaceOrderButton();
+    });
+  </script>
+</body>
+</html>

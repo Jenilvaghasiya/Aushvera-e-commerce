@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Ayushvera - Premium Herbal Products</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0B2A60;
+      --secondary: #D4AF37;
+      --accent: #B8860B;
+      --light: #F5F5DC;
+      --dark: #071b42;
+      --text-dark: #333;
+      --text-light: #f8f9fa;
+      --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+      line-height: 1.7;
+      padding-top: 90px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    p, span, a, button {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .text-gold {
+      color: var(--secondary);
+    }
+
+    .bg-primary-dark {
+      background-color: var(--primary);
+    }
+
+    /* Header Styles */
+    header {
+      width: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .logo img {
+      height: 60px;
+      transition: var(--transition);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      margin: 0 18px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 16px;
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--secondary);
+    }
+
+    /* Hero Banner */
+    .contact-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      color: white;
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('Images/tea-pattern.png') center/cover;
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-weight: 300;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .contact-form-container {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-info-container {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-form {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent 65%, rgba(212, 175, 55, 0.05) 100%);
+      z-index: 0;
+    }
+
+    .contact-form:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      transition: var(--transition);
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-control:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+      outline: none;
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      background: var(--primary);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      border: none;
+      transition: var(--transition);
+      cursor: pointer;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-submit::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+
+    .btn-submit:hover::before {
+      left: 100%;
+    }
+
+    .btn-submit:hover {
+      background: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    /* Contact Info */
+    .contact-info-card {
+      background: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .contact-info-card:hover::before {
+      width: 8px;
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--secondary);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .contact-item:hover .contact-icon {
+      transform: rotate(15deg) scale(1.1);
+    }
+
+    .contact-text h4 {
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .contact-text p, .contact-text a {
+      color: #666;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-text a:hover {
+      color: var(--secondary);
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #f5f5f5;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--secondary);
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    /* Map Section */
+    .map-section {
+      padding: 0 0 80px;
+    }
+
+    .map-container {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      height: 400px;
+    }
+
+    .map-container:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 80px 0;
+      background: #f5f5f5;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-question {
+      padding: 20px;
+      background: var(--primary);
+      color: white;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      background: var(--dark);
+    }
+
+    .faq-question h4 {
+      margin-bottom: 0;
+    }
+
+    .faq-toggle {
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 20px;
+      max-height: 500px;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta {
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-primary-cta {
+      background: var(--secondary);
+      color: var(--primary);
+      border: 2px solid var(--secondary);
+    }
+
+    .btn-primary-cta:hover {
+      background: transparent;
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline-cta {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-outline-cta:hover {
+      background: white;
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title h2 {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .section-title .divider {
+      width: 80px;
+      height: 4px;
+      background: var(--secondary);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    .section-title.light h2 {
+      color: white;
+    }
+
+    .section-title.light .divider {
+      background: var(--secondary);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 60px 0 20px;
+    }
+
+    .footer-logo img {
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .footer-about p {
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .footer-social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      margin-right: 10px;
+      transition: var(--transition);
+    }
+
+    .footer-social-links a:hover {
+      background: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .footer-links h4 {
+      color: var(--secondary);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-links h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--secondary);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: white;
+      opacity: 0.8;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      opacity: 0.6;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* Floating Animation */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1199.98px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      header {
+        padding: 15px 20px;
+      }
+      
+      .logo img {
+        height: 50px;
+      }
+      
+      .contact-container {
+        flex-direction: column;
+      }
+      
+      .contact-form-container,
+      .contact-info-container {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+      
+      .nav-link {
+        margin: 0 10px;
+        font-size: 14px;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn-cta {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      header {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+      }
+      
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .contact-form,
+      .contact-info-card {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="Images/logo bg.png" alt="Ayushvera Logo" />
+    </div>
+    <nav class="d-none d-lg-flex">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="product.html" class="nav-link">Products</a>
+      <a href="aboutus.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+      <a href="#" class="nav-link">Shop Now</a>
+    </nav>
+    <div class="icons">
+      <button class="btn btn-outline-secondary me-2"><i class="fas fa-shopping-bag"></i></button>
+      <button class="btn btn-outline-secondary"><i class="fas fa-user"></i></button>
+      <button class="btn btn-outline-secondary d-lg-none ms-2" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="hero-content" data-aos="fade-up">
+        <h1 class="hero-title">Get In Touch</h1>
+        <p class="hero-subtitle">We'd love to hear from you! Reach out with questions, feedback, or just to say hello.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Contact Us</h2>
+        <div class="divider"></div>
+        <p>Have questions or feedback? Fill out the form below or use our contact information</p>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-form-container" data-aos="fade-right">
+          <div class="contact-form">
+            <form id="feedbackForm">
+              <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-control" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number (Optional)</label>
+                <input type="tel" id="phone" class="form-control">
+              </div>
+              
+              <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <select id="subject" class="form-control" required>
+                  <option value="" disabled selected>Select a subject</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="product">Product Question</option>
+                  <option value="order">Order Support</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="wholesale">Wholesale Inquiry</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea id="message" class="form-control" required></textarea>
+              </div>
+              
+              <div class="form-group">
+                <button type="submit" class="btn-submit pulse">
+                  <i class="fas fa-paper-plane me-2"></i> Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="contact-info-container" data-aos="fade-left" data-aos-delay="100">
+          <div class="contact-info-card">
+            <div class="contact-item floating" style="animation-delay: 0.1s;">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Our Location</h4>
+                <p>Gandhidham, Gujarat, India</p>
+              </div>
+            </div>
+            
+            <div class="contact-item floating" style="animation-delay: 0.2s;">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email Us</h4>
+                <a href="mailto:ayushveraglobalbiz1718@gmail.com">ayushveraglobalbiz1718@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-item floating" style="animation-delay: 0.3s;">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Call Us</h4>
+                <a href="tel:+918160336739">+91 81603 36739</a>
+              </div>
+            </div>
+            
+            <div class="contact-item floating" style="animation-delay: 0.4s;">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Business Hours</h4>
+                <p>Monday - Friday: 9AM - 6PM<br>Saturday: 10AM - 4PM</p>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="container">
+      <div class="map-container" data-aos="zoom-in">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117763.634472895!2d70.1144544!3d23.0838032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3950b8a0a94c4e15%3A0xdc9c4b5a5a5a5a5a!2sGandhidham%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <div class="divider"></div>
+        <p>Find answers to common questions about our products and services</p>
+      </div>
+      
+      <div class="faq-list">
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-question">
+            <h4>What makes Ayushvera products different?</h4>
+            <i class="fas fa-chevron-down faq-toggle"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our products combine ancient Ayurvedic wisdom with modern scientific validation. We use only the highest quality, organic ingredients and each batch undergoes rigorous lab testing to ensure purity and potency.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="faq-question">
+            <h4>How long does shipping take?</h4>
+            <i class="fas fa-chevron-down faq-toggle"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We typically process orders within 1-2 business days. Domestic shipping takes 3-5 business days, while international shipping varies by location (7-14 business days). You'll receive tracking information once your order ships.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="faq-question">
+            <h4>Are your products suitable for everyone?</h4>
+            <i class="fas fa-chevron-down faq-toggle"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Most of our products are suitable for adults of all ages. However, we recommend consulting with a healthcare professional before use if you are pregnant, nursing, have a medical condition, or are taking medications.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="faq-question">
+            <h4>Do you offer wholesale or bulk purchasing?</h4>
+            <i class="fas fa-chevron-down faq-toggle"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! We offer special pricing for retailers, practitioners, and bulk purchasers. Please contact our wholesale team through the contact form above for more information.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="faq-question">
+            <h4>What is your return policy?</h4>
+            <i class="fas fa-chevron-down faq-toggle"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We offer a 30-day satisfaction guarantee. If you're not completely satisfied with your purchase, you may return it within 30 days for a full refund or exchange (minus shipping costs). Products must be unopened and in original condition.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="section-title light" data-aos="fade-up">
+        <h2>Still Have Questions?</h2>
+        <div class="divider"></div>
+        <p>We're here to help you on your wellness journey</p>
+      </div>
+      
+      <div class="cta-buttons" data-aos="fade-up" data-aos-delay="100">
+        <a href="tel:+918160336739" class="btn-cta btn-primary-cta">
+          <i class="fas fa-phone-alt me-2"></i> Call Us Now
+        </a>
+        <a href="mailto:ayushveraglobalbiz1718@gmail.com" class="btn-cta btn-outline-cta">
+          <i class="fas fa-envelope me-2"></i> Email Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="footer-about">
+            <div class="footer-logo">
+              <img src="Images/logo bg.png" alt="Ayushvera Logo" style="height: 80px;">
+            </div>
+            <p>Bringing the wisdom of Ayurveda to the modern world with premium herbal products crafted for health and wellness.</p>
+            <div class="footer-social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="product.html">Products</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="contactus.html">Contact</a></li>
+              <li><a href="#">Shop Now</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="#">Herbal Teas</a></li>
+              <li><a href="#">Wellness Oils</a></li>
+              <li><a href="#">Skin Care</a></li>
+              <li><a href="#">Immunity Boosters</a></li>
+              <li><a href="#">All Products</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Subscribe to receive updates, access to exclusive deals, and wellness tips.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Ayushvera Globalbiz. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS animation library
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+    
+    // FAQ toggle functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        faqItem.classList.toggle('active');
+        
+        // Close other open FAQs
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem && item.classList.contains('active')) {
+            item.classList.remove('active');
+          }
+        });
+      });
+    });
+    
+    // Form submission
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      
+      // Here you would typically send the data to your server
+      // For demo purposes, we'll just show an alert
+      alert(`Thank you, ${name}! Your feedback has been submitted. We'll contact you at ${email} soon regarding your ${subject} inquiry.`);
+      
+      // Reset form
+      this.reset();
+      
+      // Show confirmation animation
+      const submitBtn = this.querySelector('button[type="submit"]');
+      submitBtn.innerHTML = '<i class="fas fa-check me-2"></i> Message Sent!';
+      submitBtn.style.backgroundColor = '#28a745';
+      
+      setTimeout(() => {
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i> Send Message';
+        submitBtn.style.backgroundColor = '';
+      }, 3000);
+    });
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    mobileMenuBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('show');
+    });
+    
+    // Add smooth scrolling to all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

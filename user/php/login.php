@@ -15,8 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
 
-        // ✅ Compare plain text password directly
-        if ($password === $user['password']) {
+        // Use password_verify for hashed passwords
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id']; // Store user_id for multi-user logic
             $_SESSION['email'] = $user['email'];
             $_SESSION['name'] = $user['name'];
             echo "success";

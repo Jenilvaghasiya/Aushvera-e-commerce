@@ -2,6 +2,7 @@
 require_once 'config.php';
 
 $name = $_POST['name'];
+$username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -17,13 +18,14 @@ if ($stmt->num_rows > 0) {
     exit();
 }
 
-// For demo: store plaintext password. For production, use password_hash!
-$sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
+// Use password_hash for secure password storage
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$sql = "INSERT INTO users (name, username, email, password) VALUES (?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", $name, $email, $password);
+$stmt->bind_param("ssss", $name, $username, $email, $hashed_password);
 
 if ($stmt->execute()) {
-    header("Location: ../index.html?success=1");
+    header("Location: ../login.html?success=1");
     exit();
 } else {
     header("Location: ../signup.html?error=1");

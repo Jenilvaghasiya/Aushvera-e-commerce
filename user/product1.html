@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayushvera Golden Immunity Blend | Premium Herbal Tea</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0B2A60;
+      --secondary: #D4AF37;
+      --accent: #B8860B;
+      --light: #F5F5DC;
+      --dark: #071b42;
+      --text-dark: #333;
+      --text-light: #f8f9fa;
+      --transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+      line-height: 1.7;
+      padding-top: 90px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    p, span, a, button {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .text-gold {
+      color: var(--secondary);
+    }
+
+    .bg-primary-dark {
+      background-color: var(--primary);
+    }
+
+    /* Header Styles */
+    header {
+      width: 100%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .logo img {
+      height: 60px;
+      transition: var(--transition);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-link {
+      margin: 0 18px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 500;
+      font-size: 16px;
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--secondary);
+    }
+
+    /* Product Hero */
+    .product-hero {
+      padding: 60px 0;
+      background: white;
+    }
+
+    .product-container {
+      display: flex;
+      gap: 40px;
+    }
+
+    /* Product Gallery */
+    .product-gallery {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .main-image {
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .main-image:hover img {
+      transform: scale(1.02);
+    }
+
+    .image-thumbnails {
+      display: flex;
+      gap: 10px;
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .thumbnail.active,
+    .thumbnail:hover {
+      border-color: var(--secondary);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Product Details */
+    .product-details {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .product-title {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .product-subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .stars {
+      color: var(--secondary);
+      margin-right: 10px;
+    }
+
+    .review-count {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .product-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .product-price .original {
+      font-size: 1.2rem;
+      text-decoration: line-through;
+      color: #999;
+      margin-left: 10px;
+    }
+
+    .product-badge {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+    }
+
+    .product-description {
+      margin-bottom: 25px;
+      color: #555;
+    }
+
+    .product-features {
+      margin-bottom: 25px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .feature-icon {
+      color: var(--secondary);
+      margin-right: 10px;
+      font-size: 0.9rem;
+      margin-top: 3px;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .quantity-btn {
+      width: 40px;
+      height: 40px;
+      background: #f5f5f5;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .quantity-btn:hover {
+      background: #eee;
+    }
+
+    .quantity-input {
+      width: 50px;
+      height: 40px;
+      text-align: center;
+      border: none;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+    }
+
+    .btn-add-to-cart {
+      flex: 1;
+      background: var(--secondary);
+      color: var(--primary);
+      border: none;
+      border-radius: 8px;
+      padding: 0 20px;
+      font-weight: 600;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-add-to-cart:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .btn-wishlist {
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background: white;
+      color: var(--primary);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-wishlist:hover {
+      color: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    .product-meta {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .meta-item i {
+      color: var(--secondary);
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .share-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #f5f5f5;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .share-btn:hover {
+      background: var(--secondary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Product Tabs */
+    .product-tabs {
+      margin: 60px 0;
+      background: white;
+      border-radius: 15px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .tab-header {
+      display: flex;
+      border-bottom: 1px solid #eee;
+    }
+
+    .tab-btn {
+      padding: 15px 25px;
+      background: transparent;
+      border: none;
+      font-weight: 600;
+      color: #666;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      color: var(--primary);
+    }
+
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--secondary);
+    }
+
+    .tab-content {
+      padding: 30px;
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    .description-content p {
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .description-content ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .description-content li {
+      margin-bottom: 8px;
+    }
+
+    /* Ingredients Table */
+    .ingredients-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .ingredients-table th,
+    .ingredients-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    .ingredients-table th {
+      background: #f9f9f9;
+      color: var(--primary);
+    }
+
+    .ingredients-table tr:hover {
+      background: #f9f9f9;
+    }
+
+    /* Reviews Section */
+    .review-item {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .review-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .review-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .review-content {
+      flex: 1;
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .review-author {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .review-date {
+      color: #999;
+      font-size: 0.8rem;
+    }
+
+    .review-rating {
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .review-text {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .review-helpful {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .helpful-btn {
+      background: none;
+      border: none;
+      color: #666;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .helpful-btn:hover {
+      color: var(--secondary);
+    }
+
+    /* Review Form */
+    .review-form {
+      margin-top: 30px;
+      padding: 30px;
+      background: #f9f9f9;
+      border-radius: 10px;
+    }
+
+    .review-form h4 {
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .rating-input {
+      margin-bottom: 20px;
+    }
+
+    .rating-stars {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+
+    .rating-star {
+      font-size: 1.5rem;
+      color: #ddd;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .rating-star.active,
+    .rating-star:hover {
+      color: var(--secondary);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      transition: var(--transition);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+    }
+
+    .btn-submit-review {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-submit-review:hover {
+      background: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    /* Related Products */
+    .related-products {
+      margin: 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .section-title .divider {
+      width: 80px;
+      height: 4px;
+      background: var(--secondary);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .product-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-10px);
+    }
+
+    .product-card-img {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .product-card:hover .product-card-img img {
+      transform: scale(1.05);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .product-card-body {
+      padding: 20px;
+    }
+
+    .product-card-title {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .product-card-rating {
+      color: var(--secondary);
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .product-card-price {
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    .product-card-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-view {
+      flex: 1;
+      background: var(--primary);
+      color: white;
+      border: 1px solid var(--primary);
+      padding: 8px;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .btn-view:hover {
+      background: transparent;
+      color: var(--primary);
+    }
+
+    .btn-add-to-cart-sm {
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      background: var(--secondary);
+      color: var(--primary);
+      border: 1px solid var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .btn-add-to-cart-sm:hover {
+      background: transparent;
+      color: var(--secondary);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 60px 0 20px;
+    }
+
+    .footer-logo img {
+      height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .footer-about p {
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      margin-right: 10px;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .footer-links h4 {
+      color: var(--secondary);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-links h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--secondary);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: white;
+      opacity: 0.8;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--secondary);
+      padding-left: 5px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      opacity: 0.6;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1199.98px) {
+      .product-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      header {
+        padding: 15px 20px;
+      }
+      
+      .logo img {
+        height: 50px;
+      }
+      
+      .product-container {
+        flex-direction: column;
+      }
+      
+      .product-gallery,
+      .product-details {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .nav-link {
+        margin: 0 10px;
+        font-size: 14px;
+      }
+      
+      .product-actions {
+        flex-direction: column;
+      }
+      
+      .quantity-selector {
+        width: 100%;
+      }
+      
+      .btn-add-to-cart {
+        width: 100%;
+      }
+      
+      .tab-header {
+        flex-wrap: wrap;
+      }
+      
+      .tab-btn {
+        flex: 1 0 auto;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      header {
+        padding: 10px 15px;
+      }
+      
+      .product-title {
+        font-size: 1.8rem;
+      }
+      
+      .product-meta {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .review-item {
+        flex-direction: column;
+      }
+      
+      .review-avatar {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="Images/logo bg.png" alt="Ayushvera Logo" />
+    </div>
+    <nav class="d-none d-lg-flex">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="product.html" class="nav-link active">Products</a>
+      <a href="aboutus.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="#" class="nav-link">Shop Now</a>
+    </nav>
+    <div class="icons">
+      <a href="cart.html" class="btn btn-outline-secondary me-2"><i class="fas fa-shopping-bag"></i></a>
+      <a href="profile.html" class="btn btn-outline-secondary"><i class="fas fa-user"></i></a>
+      <button class="btn btn-outline-secondary d-lg-none ms-2" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Removed static product hero and tabs. The entire product detail page will be rendered dynamically below. -->
+  <div id="product-details" class="container my-5"></div>
+
+  <!-- JS libraries (Bootstrap, AOS, custom thumbnail script, etc.) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function getProductIdFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('id');
+    }
+
+    function generateStars(rating) {
+        let stars = '';
+        for (let i = 1; i <= 5; i++) {
+            if (rating >= i) {
+                stars += '<i class="fas fa-star"></i>';
+            } else if (rating >= i - 0.5) {
+                stars += '<i class="fas fa-star-half-alt"></i>';
+            } else {
+                stars += '<i class="far fa-star"></i>';
+            }
+        }
+        return stars;
+    }
+
+    function renderProductPage(product) {
+        // Images
+        let mainImage = product.images && product.images.length ? 'Admin/php/' + product.images[0] : 'Images/tea1.png';
+        let thumbnails = '';
+        if (product.images && product.images.length) {
+            thumbnails = product.images.map((img, idx) =>
+                `<img src="Admin/php/${img}" alt="${product.name}" style="height:60px;margin:5px;cursor:pointer;${idx===0?'border:2px solid #D4AF37;':''}" onclick="document.getElementById('mainProductImg').src='Admin/php/${img}'">
+            `).join('');
+        }
+
+        // Tabs content
+        const description = product.description || 'No description available.';
+        const ingredients = product.ingredients || [
+            { name: 'Turmeric', ayurvedic: 'Haridra', benefits: 'Powerful anti-inflammatory and antioxidant' },
+            { name: 'Tulsi (Holy Basil)', ayurvedic: 'Tulsi', benefits: 'Adaptogen that helps body cope with stress' }
+            // ... add more default/placeholder ingredients if needed
+        ];
+        const howToUse = product.how_to_use || [
+            'Place 1 tea bag in a cup of freshly boiled water (200ml, 90-95°C)',
+            'Cover and let steep for 5-7 minutes.',
+            'Remove the tea bag and enjoy as is or with honey.'
+        ];
+        const reviews = product.reviews || [
+            { name: 'Anjali S.', date: 'March 10, 2025', rating: 4.5, text: 'This tea has become a daily part of my routine. I feel more energetic and haven\'t had a cold in months.' },
+            { name: 'Rahul M.', date: 'April 4, 2025', rating: 5, text: 'Loved the flavor and aroma. Packaging was excellent. Definitely ordering again.' }
+        ];
+        const reviewCount = reviews.length;
+        const avgRating = reviews.reduce((sum, r) => sum + r.rating, 0) / reviewCount;
+
+        // Ingredients table HTML
+        let ingredientsTable = `<table class="ingredients-table"><thead><tr><th>Ingredient</th><th>Ayurvedic Name</th><th>Key Benefits</th></tr></thead><tbody>`;
+        ingredients.forEach(ing => {
+            ingredientsTable += `<tr><td>${ing.name}</td><td>${ing.ayurvedic}</td><td>${ing.benefits}</td></tr>`;
+        });
+        ingredientsTable += `</tbody></table>`;
+
+        // How to use HTML
+        let howToUseHtml = '<ol>' + howToUse.map(step => `<li>${step}</li>`).join('') + '</ol>';
+
+        // Reviews HTML
+        let reviewsHtml = reviews.map(r => `
+            <div class="review-item">
+                <div class="review-avatar">
+                    <img src="Images/tea1.png" alt="User">
+                </div>
+                <div class="review-content">
+                    <div class="review-header">
+                        <span class="review-author">${r.name}</span>
+                        <span class="review-date">${r.date}</span>
+                    </div>
+                    <div class="review-rating">${generateStars(r.rating)}</div>
+                    <div class="review-text">${r.text}</div>
+                </div>
+            </div>
+        `).join('');
+
+        // Main HTML
+        document.getElementById('product-details').innerHTML = `
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img id="mainProductImg" src="${mainImage}" alt="${product.name}" style="max-width:100%;max-height:400px;">
+                    <div style="margin-top:10px;">${thumbnails}</div>
+                </div>
+                <div class="col-md-6">
+                    <h2>${product.name}</h2>
+                    <div>
+                        <span style="color:gold;">${generateStars(avgRating)}</span>
+                        <span>(${reviewCount} reviews)</span>
+                    </div>
+                    <h3 style="color:#B8860B;">₹${product.price} <del style="color:gray;font-size:1rem;">₹${Math.round(product.price * 1.2)}</del></h3>
+                    <ul>
+                        <li>100% Natural & Organic Ingredients</li>
+                        <li>No Artificial Additives or Preservatives</li>
+                        <li>Lab Tested for Purity & Potency</li>
+                        <li>Caffeine-Free & Suitable for All Ages</li>
+                    </ul>
+                    <div class="input-group mb-3" style="max-width:120px;">
+                        <button class="btn btn-outline-secondary" type="button" onclick="changeQty(-1)">-</button>
+                        <input type="text" class="form-control text-center" id="qty" value="1">
+                        <button class="btn btn-outline-secondary" type="button" onclick="changeQty(1)">+</button>
+                    </div>
+                    <button class="btn btn-warning" style="background:#D4AF37;color:#0B2A60;" onclick="addToCartFromDetail()">Add to Cart</button>
+                    <div style="margin-top:10px;">
+                        <span>30 Tea Bags per Box</span> | 
+                        <span>Net Weight: 50g</span> | 
+                        <span>Category: ${product.category || 'Herbal Teas'}</span>
+                    </div>
+                    <div style="margin-top:10px;">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-tabs mt-5">
+                <div class="tab-header">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="ingredients">Ingredients</button>
+                    <button class="tab-btn" data-tab="how-to-use">How to Use</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews (${reviewCount})</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="description">
+                        <div class="description-content">
+                            <h3>About ${product.name}</h3>
+                            <p>${description}</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="ingredients">
+                        <div class="ingredients-content">
+                            <h3>Powerful Ayurvedic Ingredients</h3>
+                            ${ingredientsTable}
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="how-to-use">
+                        <div class="how-to-use-content">
+                            <h3>Brewing Instructions</h3>
+                            ${howToUseHtml}
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="reviews">
+                        <div class="reviews-content">
+                            <h3>Customer Reviews</h3>
+                            <p>Average Rating: ${avgRating.toFixed(1)}/5 from ${reviewCount} reviews</p>
+                            ${reviewsHtml}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Tab switching logic
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.querySelectorAll('.tab-pane').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const productId = getProductIdFromUrl();
+        if (!productId) {
+            document.getElementById('product-details').innerHTML = '<h2>Product not found.</h2>';
+            return;
+        }
+        fetch('php/get_product.php?id=' + productId)
+            .then(res => res.json())
+            .then(product => {
+                if (product.error) {
+                    document.getElementById('product-details').innerHTML = '<h2>' + product.error + '</h2>';
+                    return;
+                }
+                renderProductPage(product);
+            })
+            .catch(() => {
+                document.getElementById('product-details').innerHTML = '<h2>Failed to load product details.</h2>';
+            });
+    });
+
+    // Quantity change function
+    function changeQty(delta) {
+        const qtyInput = document.getElementById('qty');
+        let qty = parseInt(qtyInput.value) || 1;
+        qty = Math.max(1, qty + delta);
+        qtyInput.value = qty;
+    }
+
+    function addToCartFromDetail() {
+        const productId = getProductIdFromUrl();
+        const quantity = parseInt(document.getElementById('qty').value) || 1;
+        
+        if (!productId) {
+            alert('Product not found!');
+            return;
+        }
+
+        // Fetch product details
+        fetch('php/get_product.php?id=' + productId)
+            .then(res => res.json())
+            .then(product => {
+                if (product.error) {
+                    alert('Product not found!');
+                    return;
+                }
+
+                // Get cart from localStorage
+                let cart = JSON.parse(localStorage.getItem('ayushvera_cart') || '[]');
+                
+                // Check if product already exists in cart
+                const existingItem = cart.find(item => item.id == productId);
+                
+                if (existingItem) {
+                    existingItem.quantity += quantity;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        image: product.images && product.images.length > 0 ? product.images[0] : 'tea1.png',
+                        sku: product.sku || 'N/A',
+                        category: product.category || 'Herbal Tea',
+                        quantity: quantity
+                    });
+                }
+                
+                // Save to localStorage
+                localStorage.setItem('ayushvera_cart', JSON.stringify(cart));
+                
+                // Show success message and redirect to cart
+                alert('Product added to cart!');
+                window.location.href = 'cart.html';
+            })
+            .catch(error => {
+                console.error('Error adding to cart:', error);
+                alert('Error adding product to cart');
+            });
+    }
+  </script>
+</body>
+</html>
